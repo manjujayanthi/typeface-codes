@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.Scanner;
+class Main
+{
+static void convertToTernary(int N)
+{
+    if (N == 0)
+        return;
+    int x = N % 3;
+    N /= 3;
+    if (x < 0)
+        N += 1;
+    convertToTernary(N);
+ 
+    if (x < 0)
+        System.out.print( x + (3 * -1));
+    else
+        System.out.print( x);
+}
+ 
+static void convert(int Decimal)
+{
+    if (Decimal != 0) {
+        convertToTernary(Decimal);
+    }
+    else
+        System.out.println("0" );
+}
+ 
+public static void main (String[] args)
+{
+    int a;
+    Scanner s = new Scanner(System.in);
+    a = s.nextInt();
+ 
+    convert(a);
+ 
+}
+}
